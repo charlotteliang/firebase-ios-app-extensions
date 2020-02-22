@@ -21,16 +21,13 @@ import FirebaseMessaging
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
 
-
-
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
     FirebaseApp.configure()
     let center = UNUserNotificationCenter.current()
     center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
-      if granted {
-        application.registerForRemoteNotifications()
-      }
     }
+    application.registerForRemoteNotifications()
+
     Messaging.messaging().delegate = self
     return true
   }
