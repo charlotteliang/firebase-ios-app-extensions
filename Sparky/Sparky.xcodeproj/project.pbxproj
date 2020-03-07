@@ -3,10 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5109EC502412E3F100904A07 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5109EC4F2412E3F100904A07 /* NotificationService.swift */; };
+		5109EC542412E3F100904A07 /* ServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5109EC4D2412E3F100904A07 /* ServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5109EC5A2413169600904A07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5109EC592413169600904A07 /* GoogleService-Info.plist */; };
+		5109EC622413187C00904A07 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5109EC612413187C00904A07 /* ShareViewController.swift */; };
+		5109EC652413187C00904A07 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5109EC632413187C00904A07 /* MainInterface.storyboard */; };
+		5109EC692413187C00904A07 /* ShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5109EC5F2413187C00904A07 /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		51A3E1B12400A86700780B4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A3E1B02400A86700780B4E /* AppDelegate.swift */; };
 		51A3E1B32400A86700780B4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A3E1B22400A86700780B4E /* SceneDelegate.swift */; };
 		51A3E1B52400A86700780B4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A3E1B42400A86700780B4E /* ViewController.swift */; };
@@ -23,9 +29,24 @@
 		51A3E1E52400AAF700780B4E /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A3E1E42400AAF700780B4E /* NotificationController.swift */; };
 		51A3E1E72400AAF700780B4E /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A3E1E62400AAF700780B4E /* ComplicationController.swift */; };
 		51A3E1E92400AAF800780B4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51A3E1E82400AAF800780B4E /* Assets.xcassets */; };
+		51C96BA324131D9800210072 /* sparky.png in Resources */ = {isa = PBXBuildFile; fileRef = 51C96BA224131D9800210072 /* sparky.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5109EC522412E3F100904A07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51A3E1A52400A86700780B4E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5109EC4C2412E3F100904A07;
+			remoteInfo = ServiceExtension;
+		};
+		5109EC672413187C00904A07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51A3E1A52400A86700780B4E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5109EC5E2413187C00904A07;
+			remoteInfo = ShareExtension;
+		};
 		51A3E1CE2400AAF700780B4E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 51A3E1A52400A86700780B4E /* Project object */;
@@ -43,6 +64,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		5109EC552412E3F100904A07 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				5109EC692413187C00904A07 /* ShareExtension.appex in Embed App Extensions */,
+				5109EC542412E3F100904A07 /* ServiceExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		51A3E1EE2400AAF800780B4E /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -68,6 +101,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5109EC4D2412E3F100904A07 /* ServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5109EC4F2412E3F100904A07 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		5109EC512412E3F100904A07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5109EC592413169600904A07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5109EC5F2413187C00904A07 /* ShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5109EC612413187C00904A07 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		5109EC642413187C00904A07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		5109EC662413187C00904A07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51A3E1AD2400A86700780B4E /* Sparky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sparky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51A3E1B02400A86700780B4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51A3E1B22400A86700780B4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,10 +132,25 @@
 		51A3E1EA2400AAF800780B4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		51A3E1EB2400AAF800780B4E /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		51A3E1F72400B09900780B4E /* Sparky.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sparky.entitlements; sourceTree = "<group>"; };
+		51C96BA224131D9800210072 /* sparky.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sparky.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2D12F1BD5CFB3DD7AE494B8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5109EC4A2412E3F100904A07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5109EC5C2413187C00904A07 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -125,13 +181,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FA1CD35264F229FE60AB5CC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		5109EC4E2412E3F100904A07 /* ServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				5109EC4F2412E3F100904A07 /* NotificationService.swift */,
+				5109EC512412E3F100904A07 /* Info.plist */,
+			);
+			path = ServiceExtension;
+			sourceTree = "<group>";
+		};
+		5109EC602413187C00904A07 /* ShareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				5109EC612413187C00904A07 /* ShareViewController.swift */,
+				5109EC632413187C00904A07 /* MainInterface.storyboard */,
+				5109EC662413187C00904A07 /* Info.plist */,
+			);
+			path = ShareExtension;
+			sourceTree = "<group>";
+		};
 		51A3E1A42400A86700780B4E = {
 			isa = PBXGroup;
 			children = (
+				5109EC592413169600904A07 /* GoogleService-Info.plist */,
 				51A3E1AF2400A86700780B4E /* Sparky */,
 				51A3E1D02400AAF700780B4E /* SparkyOnWatchWatchKitApp */,
 				51A3E1DF2400AAF700780B4E /* SparkyOnWatchWatchKitExtension */,
+				5109EC4E2412E3F100904A07 /* ServiceExtension */,
+				5109EC602413187C00904A07 /* ShareExtension */,
 				51A3E1AE2400A86700780B4E /* Products */,
+				2FA1CD35264F229FE60AB5CC /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,6 +228,8 @@
 				51A3E1C92400AAF700780B4E /* SparkyOnWatch.app */,
 				51A3E1CC2400AAF700780B4E /* SparkyOnWatchWatchKitApp.app */,
 				51A3E1DB2400AAF700780B4E /* SparkyOnWatchWatchKitExtension.appex */,
+				5109EC4D2412E3F100904A07 /* ServiceExtension.appex */,
+				5109EC5F2413187C00904A07 /* ShareExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -158,6 +246,7 @@
 				51A3E1BE2400A86700780B4E /* LaunchScreen.storyboard */,
 				51A3E1C12400A86700780B4E /* Info.plist */,
 				51A3E1B92400A86700780B4E /* Sparky.xcdatamodeld */,
+				51C96BA224131D9800210072 /* sparky.png */,
 			);
 			path = Sparky;
 			sourceTree = "<group>";
@@ -189,6 +278,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5109EC4C2412E3F100904A07 /* ServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5109EC582412E3F100904A07 /* Build configuration list for PBXNativeTarget "ServiceExtension" */;
+			buildPhases = (
+				5109EC492412E3F100904A07 /* Sources */,
+				5109EC4A2412E3F100904A07 /* Frameworks */,
+				5109EC4B2412E3F100904A07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ServiceExtension;
+			productName = ServiceExtension;
+			productReference = 5109EC4D2412E3F100904A07 /* ServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		5109EC5E2413187C00904A07 /* ShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5109EC6A2413187C00904A07 /* Build configuration list for PBXNativeTarget "ShareExtension" */;
+			buildPhases = (
+				5109EC5B2413187C00904A07 /* Sources */,
+				5109EC5C2413187C00904A07 /* Frameworks */,
+				5109EC5D2413187C00904A07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShareExtension;
+			productName = ShareExtension;
+			productReference = 5109EC5F2413187C00904A07 /* ShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		51A3E1AC2400A86700780B4E /* Sparky */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51A3E1C42400A86700780B4E /* Build configuration list for PBXNativeTarget "Sparky" */;
@@ -196,10 +319,13 @@
 				51A3E1A92400A86700780B4E /* Sources */,
 				51A3E1AA2400A86700780B4E /* Frameworks */,
 				51A3E1AB2400A86700780B4E /* Resources */,
+				5109EC552412E3F100904A07 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				5109EC532412E3F100904A07 /* PBXTargetDependency */,
+				5109EC682413187C00904A07 /* PBXTargetDependency */,
 			);
 			name = Sparky;
 			productName = Sparky;
@@ -269,6 +395,12 @@
 				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = "Chen Liang";
 				TargetAttributes = {
+					5109EC4C2412E3F100904A07 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+					5109EC5E2413187C00904A07 = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
 					51A3E1AC2400A86700780B4E = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
@@ -300,16 +432,35 @@
 				51A3E1C82400AAF700780B4E /* SparkyOnWatch */,
 				51A3E1CB2400AAF700780B4E /* SparkyOnWatchWatchKitApp */,
 				51A3E1DA2400AAF700780B4E /* SparkyOnWatchWatchKitExtension */,
+				5109EC4C2412E3F100904A07 /* ServiceExtension */,
+				5109EC5E2413187C00904A07 /* ShareExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5109EC4B2412E3F100904A07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5109EC5D2413187C00904A07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5109EC652413187C00904A07 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		51A3E1AB2400A86700780B4E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51C96BA324131D9800210072 /* sparky.png in Resources */,
 				51A3E1C02400A86700780B4E /* LaunchScreen.storyboard in Resources */,
+				5109EC5A2413169600904A07 /* GoogleService-Info.plist in Resources */,
 				51A3E1BD2400A86700780B4E /* Assets.xcassets in Resources */,
 				51A3E1B82400A86700780B4E /* Main.storyboard in Resources */,
 			);
@@ -342,6 +493,22 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5109EC492412E3F100904A07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5109EC502412E3F100904A07 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5109EC5B2413187C00904A07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5109EC622413187C00904A07 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		51A3E1A92400A86700780B4E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -367,6 +534,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5109EC532412E3F100904A07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5109EC4C2412E3F100904A07 /* ServiceExtension */;
+			targetProxy = 5109EC522412E3F100904A07 /* PBXContainerItemProxy */;
+		};
+		5109EC682413187C00904A07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5109EC5E2413187C00904A07 /* ShareExtension */;
+			targetProxy = 5109EC672413187C00904A07 /* PBXContainerItemProxy */;
+		};
 		51A3E1CF2400AAF700780B4E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 51A3E1CB2400AAF700780B4E /* SparkyOnWatchWatchKitApp */;
@@ -380,6 +557,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		5109EC632413187C00904A07 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5109EC642413187C00904A07 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		51A3E1B62400A86700780B4E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -407,6 +592,90 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5109EC562412E3F100904A07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = ServiceExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.firebase.extensions.dev.NotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5109EC572412E3F100904A07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = ServiceExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.firebase.extensions.dev.NotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5109EC6B2413187C00904A07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = ShareExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.firebase.extensions.dev.ShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5109EC6C2413187C00904A07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = ShareExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.firebase.extensions.dev.ShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		51A3E1C22400A86700780B4E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -524,6 +793,7 @@
 		51A3E1C52400A86700780B4E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Sparky/Sparky.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -545,6 +815,7 @@
 		51A3E1C62400A86700780B4E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Sparky/Sparky.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -686,6 +957,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5109EC582412E3F100904A07 /* Build configuration list for PBXNativeTarget "ServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5109EC562412E3F100904A07 /* Debug */,
+				5109EC572412E3F100904A07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5109EC6A2413187C00904A07 /* Build configuration list for PBXNativeTarget "ShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5109EC6B2413187C00904A07 /* Debug */,
+				5109EC6C2413187C00904A07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		51A3E1A82400A86700780B4E /* Build configuration list for PBXProject "Sparky" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
