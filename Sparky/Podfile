@@ -1,6 +1,19 @@
 use_frameworks!
- 
+
 target 'Sparky' do
   platform :ios, '9.0'
   pod 'Firebase/Messaging'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
+end
+
+target 'ServiceExtension' do
+  platform :ios, '9.0'
+  pod 'Firebase/Messaging'
+end
+
+target 'ShareExtension' do
+  platform :ios, '9.0'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
 end

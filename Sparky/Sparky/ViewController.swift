@@ -14,11 +14,29 @@
 
 import UIKit
 
+import Firebase
+
 class ViewController: UIViewController {
 
+  
+  @IBOutlet var imageView: UIImageView!
+  
+  var storage : Storage!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view.
+    loadImage()
+  }
+  
+  func loadImage () {
+    self.storage = Storage.storage()
+    let imageFileName = "imageFileName.JPG"
+    let ref = self.storage.reference().child(imageFileName)
+    ref.getData(maxSize: 20 * 1024 * 2014) { (data: Data?, error: Error?) in
+      guard let data = data, error == nil else { return }
+      self.imageView.contentMode = .scaleAspectFit
+      self.imageView.image = UIImage(data:data)
+    }
   }
 
 
