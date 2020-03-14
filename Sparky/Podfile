@@ -17,3 +17,16 @@ target 'ShareExtension' do
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
 end
+
+target 'SparkyOnWatchWatchKitExtension' do
+  platform :watchos, '6.0'
+  pod 'Firebase/Messaging'
+  pod 'Firebase/Storage'
+end
+
+target 'SPARKY TODAY' do
+  platform :ios, '9.0'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Storage'
+end

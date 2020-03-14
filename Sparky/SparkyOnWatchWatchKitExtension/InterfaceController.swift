@@ -1,4 +1,4 @@
-  // Copyright 2020 Google
+// Copyright 2020 Google
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -14,19 +14,25 @@
 
 import WatchKit
 import Foundation
+import FirebaseStorage
 
 
 class InterfaceController: WKInterfaceController {
 
-    override func awake(withContext context: Any?) {
+  @IBOutlet weak var imageView: WKInterfaceImage!
+  override func awake(withContext context: Any?) {
         super.awake(withContext: context)
         
         // Configure interface objects here.
     }
     
     override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
+      super.willActivate()
+      let storage = Storage.storage()
+      let storageRef = storage.reference().child("imageFileName.JPG")
+        storageRef.getData(maxSize: 20 * 1024 * 1024) { (data: Data?, error: Error?) in
+          self.imageView.setImageData(data)
+      }
     }
     
     override func didDeactivate() {

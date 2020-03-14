@@ -9,10 +9,13 @@
 /* Begin PBXBuildFile section */
 		5109EC502412E3F100904A07 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5109EC4F2412E3F100904A07 /* NotificationService.swift */; };
 		5109EC542412E3F100904A07 /* ServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5109EC4D2412E3F100904A07 /* ServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		5109EC5A2413169600904A07 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5109EC592413169600904A07 /* GoogleService-Info.plist */; };
 		5109EC622413187C00904A07 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5109EC612413187C00904A07 /* ShareViewController.swift */; };
 		5109EC652413187C00904A07 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5109EC632413187C00904A07 /* MainInterface.storyboard */; };
 		5109EC692413187C00904A07 /* ShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 5109EC5F2413187C00904A07 /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		51500E7B241AFF0200DB68CE /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51500E7A241AFF0200DB68CE /* NotificationCenter.framework */; };
+		51500E7E241AFF0200DB68CE /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51500E7D241AFF0200DB68CE /* TodayViewController.swift */; };
+		51500E81241AFF0200DB68CE /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 51500E7F241AFF0200DB68CE /* MainInterface.storyboard */; };
+		51500E85241AFF0200DB68CE /* SPARKY TODAY.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 51500E79241AFF0200DB68CE /* SPARKY TODAY.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		51A3E1B12400A86700780B4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A3E1B02400A86700780B4E /* AppDelegate.swift */; };
 		51A3E1B32400A86700780B4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A3E1B22400A86700780B4E /* SceneDelegate.swift */; };
 		51A3E1B52400A86700780B4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A3E1B42400A86700780B4E /* ViewController.swift */; };
@@ -47,6 +50,13 @@
 			remoteGlobalIDString = 5109EC5E2413187C00904A07;
 			remoteInfo = ShareExtension;
 		};
+		51500E83241AFF0200DB68CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51A3E1A52400A86700780B4E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 51500E78241AFF0200DB68CE;
+			remoteInfo = "SPARKY TODAY";
+		};
 		51A3E1CE2400AAF700780B4E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 51A3E1A52400A86700780B4E /* Project object */;
@@ -71,6 +81,7 @@
 			dstSubfolderSpec = 13;
 			files = (
 				5109EC692413187C00904A07 /* ShareExtension.appex in Embed App Extensions */,
+				51500E85241AFF0200DB68CE /* SPARKY TODAY.appex in Embed App Extensions */,
 				5109EC542412E3F100904A07 /* ServiceExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
@@ -104,11 +115,17 @@
 		5109EC4D2412E3F100904A07 /* ServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		5109EC4F2412E3F100904A07 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		5109EC512412E3F100904A07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5109EC592413169600904A07 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5109EC5F2413187C00904A07 /* ShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		5109EC612413187C00904A07 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		5109EC642413187C00904A07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		5109EC662413187C00904A07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51500E79241AFF0200DB68CE /* SPARKY TODAY.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SPARKY TODAY.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		51500E7A241AFF0200DB68CE /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		51500E7D241AFF0200DB68CE /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		51500E80241AFF0200DB68CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		51500E82241AFF0200DB68CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		51500E89241AFF4A00DB68CE /* SPARKY TODAY.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SPARKY TODAY.entitlements"; sourceTree = "<group>"; };
+		51500E8D241C720900DB68CE /* SparkyOnWatchWatchKitExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SparkyOnWatchWatchKitExtension.entitlements; sourceTree = "<group>"; };
 		51A3E1AD2400A86700780B4E /* Sparky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sparky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51A3E1B02400A86700780B4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51A3E1B22400A86700780B4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +150,7 @@
 		51A3E1EB2400AAF800780B4E /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		51A3E1F72400B09900780B4E /* Sparky.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sparky.entitlements; sourceTree = "<group>"; };
 		51C96BA224131D9800210072 /* sparky.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sparky.png; sourceTree = "<group>"; };
+		51CDC82624184E2300912E27 /* ShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ShareExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +172,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		51500E76241AFF0200DB68CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51500E7B241AFF0200DB68CE /* NotificationCenter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +226,7 @@
 		5109EC602413187C00904A07 /* ShareExtension */ = {
 			isa = PBXGroup;
 			children = (
+				51CDC82624184E2300912E27 /* ShareExtension.entitlements */,
 				5109EC612413187C00904A07 /* ShareViewController.swift */,
 				5109EC632413187C00904A07 /* MainInterface.storyboard */,
 				5109EC662413187C00904A07 /* Info.plist */,
@@ -207,17 +234,29 @@
 			path = ShareExtension;
 			sourceTree = "<group>";
 		};
+		51500E7C241AFF0200DB68CE /* SPARKY TODAY */ = {
+			isa = PBXGroup;
+			children = (
+				51500E89241AFF4A00DB68CE /* SPARKY TODAY.entitlements */,
+				51500E7D241AFF0200DB68CE /* TodayViewController.swift */,
+				51500E7F241AFF0200DB68CE /* MainInterface.storyboard */,
+				51500E82241AFF0200DB68CE /* Info.plist */,
+			);
+			path = "SPARKY TODAY";
+			sourceTree = "<group>";
+		};
 		51A3E1A42400A86700780B4E = {
 			isa = PBXGroup;
 			children = (
-				5109EC592413169600904A07 /* GoogleService-Info.plist */,
 				51A3E1AF2400A86700780B4E /* Sparky */,
 				51A3E1D02400AAF700780B4E /* SparkyOnWatchWatchKitApp */,
 				51A3E1DF2400AAF700780B4E /* SparkyOnWatchWatchKitExtension */,
 				5109EC4E2412E3F100904A07 /* ServiceExtension */,
 				5109EC602413187C00904A07 /* ShareExtension */,
+				51500E7C241AFF0200DB68CE /* SPARKY TODAY */,
 				51A3E1AE2400A86700780B4E /* Products */,
 				2FA1CD35264F229FE60AB5CC /* Pods */,
+				52F37E3F0067652CDBE67029 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -230,6 +269,7 @@
 				51A3E1DB2400AAF700780B4E /* SparkyOnWatchWatchKitExtension.appex */,
 				5109EC4D2412E3F100904A07 /* ServiceExtension.appex */,
 				5109EC5F2413187C00904A07 /* ShareExtension.appex */,
+				51500E79241AFF0200DB68CE /* SPARKY TODAY.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -264,6 +304,7 @@
 		51A3E1DF2400AAF700780B4E /* SparkyOnWatchWatchKitExtension */ = {
 			isa = PBXGroup;
 			children = (
+				51500E8D241C720900DB68CE /* SparkyOnWatchWatchKitExtension.entitlements */,
 				51A3E1E02400AAF700780B4E /* InterfaceController.swift */,
 				51A3E1E22400AAF700780B4E /* ExtensionDelegate.swift */,
 				51A3E1E42400AAF700780B4E /* NotificationController.swift */,
@@ -273,6 +314,14 @@
 				51A3E1EB2400AAF800780B4E /* PushNotificationPayload.apns */,
 			);
 			path = SparkyOnWatchWatchKitExtension;
+			sourceTree = "<group>";
+		};
+		52F37E3F0067652CDBE67029 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				51500E7A241AFF0200DB68CE /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +361,23 @@
 			productReference = 5109EC5F2413187C00904A07 /* ShareExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		51500E78241AFF0200DB68CE /* SPARKY TODAY */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51500E88241AFF0200DB68CE /* Build configuration list for PBXNativeTarget "SPARKY TODAY" */;
+			buildPhases = (
+				51500E75241AFF0200DB68CE /* Sources */,
+				51500E76241AFF0200DB68CE /* Frameworks */,
+				51500E77241AFF0200DB68CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SPARKY TODAY";
+			productName = "SPARKY TODAY";
+			productReference = 51500E79241AFF0200DB68CE /* SPARKY TODAY.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		51A3E1AC2400A86700780B4E /* Sparky */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 51A3E1C42400A86700780B4E /* Build configuration list for PBXNativeTarget "Sparky" */;
@@ -326,6 +392,7 @@
 			dependencies = (
 				5109EC532412E3F100904A07 /* PBXTargetDependency */,
 				5109EC682413187C00904A07 /* PBXTargetDependency */,
+				51500E84241AFF0200DB68CE /* PBXTargetDependency */,
 			);
 			name = Sparky;
 			productName = Sparky;
@@ -401,6 +468,9 @@
 					5109EC5E2413187C00904A07 = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
+					51500E78241AFF0200DB68CE = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
 					51A3E1AC2400A86700780B4E = {
 						CreatedOnToolsVersion = 11.2.1;
 					};
@@ -434,6 +504,7 @@
 				51A3E1DA2400AAF700780B4E /* SparkyOnWatchWatchKitExtension */,
 				5109EC4C2412E3F100904A07 /* ServiceExtension */,
 				5109EC5E2413187C00904A07 /* ShareExtension */,
+				51500E78241AFF0200DB68CE /* SPARKY TODAY */,
 			);
 		};
 /* End PBXProject section */
@@ -454,13 +525,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		51500E77241AFF0200DB68CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51500E81241AFF0200DB68CE /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		51A3E1AB2400A86700780B4E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				51C96BA324131D9800210072 /* sparky.png in Resources */,
 				51A3E1C02400A86700780B4E /* LaunchScreen.storyboard in Resources */,
-				5109EC5A2413169600904A07 /* GoogleService-Info.plist in Resources */,
 				51A3E1BD2400A86700780B4E /* Assets.xcassets in Resources */,
 				51A3E1B82400A86700780B4E /* Main.storyboard in Resources */,
 			);
@@ -509,6 +587,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		51500E75241AFF0200DB68CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51500E7E241AFF0200DB68CE /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		51A3E1A92400A86700780B4E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -544,6 +630,11 @@
 			target = 5109EC5E2413187C00904A07 /* ShareExtension */;
 			targetProxy = 5109EC672413187C00904A07 /* PBXContainerItemProxy */;
 		};
+		51500E84241AFF0200DB68CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 51500E78241AFF0200DB68CE /* SPARKY TODAY */;
+			targetProxy = 51500E83241AFF0200DB68CE /* PBXContainerItemProxy */;
+		};
 		51A3E1CF2400AAF700780B4E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 51A3E1CB2400AAF700780B4E /* SparkyOnWatchWatchKitApp */;
@@ -561,6 +652,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				5109EC642413187C00904A07 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		51500E7F241AFF0200DB68CE /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				51500E80241AFF0200DB68CE /* Base */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -595,9 +694,9 @@
 		5109EC562412E3F100904A07 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = EQHXZ8M8AV;
 				INFOPLIST_FILE = ServiceExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -606,7 +705,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.firebase.extensions.dev.NotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Firebase iOS App Extensions Notification Service Extension Dev";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -616,9 +715,9 @@
 		5109EC572412E3F100904A07 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = EQHXZ8M8AV;
 				INFOPLIST_FILE = ServiceExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -627,7 +726,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.firebase.extensions.dev.NotificationServiceExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Firebase iOS App Extensions Notification Service Extension Dev";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -637,9 +736,10 @@
 		5109EC6B2413187C00904A07 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = EQHXZ8M8AV;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -648,7 +748,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.firebase.extensions.dev.ShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Firebase iOS App Extensions Share Extension Dev";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -658,9 +758,10 @@
 		5109EC6C2413187C00904A07 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_ENTITLEMENTS = ShareExtension/ShareExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = EQHXZ8M8AV;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -669,7 +770,51 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.firebase.extensions.dev.ShareExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Firebase iOS App Extensions Share Extension Dev";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		51500E86241AFF0200DB68CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "SPARKY TODAY/SPARKY TODAY.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = EQHXZ8M8AV;
+				INFOPLIST_FILE = "SPARKY TODAY/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.firebase.extensions.dev.TodayWidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Firebase iOS App Extensions Today Widget Extension Dev";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		51500E87241AFF0200DB68CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "SPARKY TODAY/SPARKY TODAY.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = EQHXZ8M8AV;
+				INFOPLIST_FILE = "SPARKY TODAY/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.google.firebase.extensions.dev.TodayWidgetExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Firebase iOS App Extensions Today Widget Extension Dev";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -796,9 +941,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Sparky/Sparky.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = EQHXZ8M8AV;
 				INFOPLIST_FILE = Sparky/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -806,7 +951,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.firebase.extensions.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Firebase iOS App Extensions Dev";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -818,9 +963,9 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Sparky/Sparky.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = EQHXZ8M8AV;
 				INFOPLIST_FILE = Sparky/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -828,7 +973,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.firebase.extensions.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Firebase iOS App Extensions Dev";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -837,14 +982,14 @@
 		51A3E1EC2400AAF800780B4E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = EQHXZ8M8AV;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.firebase.extensions.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Firebase iOS App Extensions Dev";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -852,14 +997,14 @@
 		51A3E1ED2400AAF800780B4E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = EQHXZ8M8AV;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.firebase.extensions.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Firebase iOS App Extensions Dev";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -869,14 +1014,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
-				IBSC_MODULE = SparkyOnWatch_WatchKit_Extension;
+				DEVELOPMENT_TEAM = EQHXZ8M8AV;
+				IBSC_MODULE = SparkyOnWatchWatchKitExtension;
 				INFOPLIST_FILE = SparkyOnWatchWatchKitApp/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.firebase.extensions.dev.WatchKitApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Firebase iOS App Extensions WatchKit App Dev";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -890,14 +1035,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
-				IBSC_MODULE = SparkyOnWatch_WatchKit_Extension;
+				DEVELOPMENT_TEAM = EQHXZ8M8AV;
+				IBSC_MODULE = SparkyOnWatchWatchKitExtension;
 				INFOPLIST_FILE = SparkyOnWatchWatchKitApp/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.firebase.extensions.dev.WatchKitApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Firebase iOS App Extensions WatchKit App Dev";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -910,9 +1055,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_ENTITLEMENTS = SparkyOnWatchWatchKitExtension/SparkyOnWatchWatchKitExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = EQHXZ8M8AV;
 				INFOPLIST_FILE = SparkyOnWatchWatchKitExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -921,7 +1067,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.firebase.extensions.dev.WatchKitApp.WatchKitExtension;
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Firebase iOS App Extensions WatchKit Extension Dev";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -934,9 +1080,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_ENTITLEMENTS = SparkyOnWatchWatchKitExtension/SparkyOnWatchWatchKitExtension.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = EQHXZ8M8AV;
 				INFOPLIST_FILE = SparkyOnWatchWatchKitExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -945,7 +1092,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.google.firebase.extensions.dev.WatchKitApp.WatchKitExtension;
 				PRODUCT_NAME = "${TARGET_NAME}";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Firebase iOS App Extensions WatchKit Extension Dev";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -971,6 +1118,15 @@
 			buildConfigurations = (
 				5109EC6B2413187C00904A07 /* Debug */,
 				5109EC6C2413187C00904A07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		51500E88241AFF0200DB68CE /* Build configuration list for PBXNativeTarget "SPARKY TODAY" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51500E86241AFF0200DB68CE /* Debug */,
+				51500E87241AFF0200DB68CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

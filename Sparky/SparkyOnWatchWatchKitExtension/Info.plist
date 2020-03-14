@@ -41,7 +41,7 @@
 		<key>NSExtensionAttributes</key>
 		<dict>
 			<key>WKAppBundleIdentifier</key>
-			<string>com.google.firebase.extensions.dev.SparkyOnWatch.watchkitapp</string>
+			<string>com.google.firebase.extensions.dev.WatchKitApp</string>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.watchkit</string>
