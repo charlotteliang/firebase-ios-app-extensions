@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		517D4C792421934300C7F8AE /* sparky.png in Resources */ = {isa = PBXBuildFile; fileRef = 517D4C782421934300C7F8AE /* sparky.png */; };
 		51A3E1B12400A86700780B4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A3E1B02400A86700780B4E /* AppDelegate.swift */; };
 		51A3E1B32400A86700780B4E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A3E1B22400A86700780B4E /* SceneDelegate.swift */; };
 		51A3E1B52400A86700780B4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A3E1B42400A86700780B4E /* ViewController.swift */; };
@@ -68,6 +69,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		517D4C782421934300C7F8AE /* sparky.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sparky.png; sourceTree = "<group>"; };
 		51A3E1AD2400A86700780B4E /* Sparky.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sparky.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51A3E1B02400A86700780B4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51A3E1B22400A86700780B4E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2822D92505DBBCB7ABB2B61A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		51A3E1A42400A86700780B4E = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +141,7 @@
 				51A3E1D02400AAF700780B4E /* SparkyOnWatchWatchKitApp */,
 				51A3E1DF2400AAF700780B4E /* SparkyOnWatchWatchKitExtension */,
 				51A3E1AE2400A86700780B4E /* Products */,
+				2822D92505DBBCB7ABB2B61A /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +159,7 @@
 		51A3E1AF2400A86700780B4E /* Sparky */ = {
 			isa = PBXGroup;
 			children = (
+				517D4C782421934300C7F8AE /* sparky.png */,
 				51A3E1F72400B09900780B4E /* Sparky.entitlements */,
 				51A3E1B02400A86700780B4E /* AppDelegate.swift */,
 				51A3E1B22400A86700780B4E /* SceneDelegate.swift */,
@@ -309,6 +320,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				517D4C792421934300C7F8AE /* sparky.png in Resources */,
 				51A3E1C02400A86700780B4E /* LaunchScreen.storyboard in Resources */,
 				51A3E1BD2400A86700780B4E /* Assets.xcassets in Resources */,
 				51A3E1B82400A86700780B4E /* Main.storyboard in Resources */,
