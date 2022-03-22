@@ -8,32 +8,29 @@
 import SwiftUI
 import FirebaseAuth
 import FirebaseStorage
+import FirebaseFirestore
 
 struct ContentView: View {
   
   @State var image:UIImage?
+  @State var description:String?
     var body: some View {
       VStack {
-      Text("Hello, world!")
-            .padding()
       if image != nil {
         Image(uiImage:image!)
           .resizable()
           .scaledToFit()
-          .frame(width: 300, height: 300, alignment: .center)
-      } else {
-        Image(uiImage:UIImage(imageLiteralResourceName: "coffee.png"))
-          .resizable()
-          .scaledToFit()
-          .frame(width: 300, height: 300, alignment: .center)
       }
-        Button(action: showImage) {
-          Text("Show Photo")
+        if description != nil {
+          Text(description!)
+            .padding()
         }
+      }.onAppear() {
+        showPost()
+      }
     }
-  }
   
-  func showImage() {
+  func showPost() {
 //    do {
 //      try Auth.auth().useUserAccessGroup("EQHXZ8M8AV.group.com.google.firebase.extensions")
 //    } catch let error as NSError {
@@ -44,6 +41,21 @@ struct ContentView: View {
           guard let data = data, error == nil else {return }
           self.image = UIImage(data:data)!
           }
+    let db = Firestore.firestore()
+    db.collection("Posts").document("post")
+        .addSnapshotListener { documentSnapshot, error in
+          guard let document = documentSnapshot else {
+            print("Error fetching document: \(error!)")
+            return
+          }
+          guard let data = document.data() else {
+            print("Document data was empty.")
+            return
+          }
+          print("Current data: \(data)")
+          self.description = data["description"] as? String
+        }
+
   }
 }
 
