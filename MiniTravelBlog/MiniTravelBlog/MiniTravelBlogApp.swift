@@ -17,7 +17,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 //          } catch let error as NSError {
 //            print("Error changing user access group: %@", error)
 //          }
-            Auth.auth().signIn(withEmail: "chen@12345.com", password: "pugiscute") { (result: AuthDataResult?, error: Error?) in
+            Auth.auth().signIn(withEmail: "your email", password: "your password") { (result: AuthDataResult?, error: Error?) in
                   }
         return true
     }

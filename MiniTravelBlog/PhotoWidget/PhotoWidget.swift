@@ -11,28 +11,30 @@ import Intents
 import FirebaseAuth
 import FirebaseCore
 import FirebaseStorage
+import FirebaseFirestore
 
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
-      SimpleEntry(date: Date(), configuration: ConfigurationIntent(), image:UIImage(imageLiteralResourceName: "coffee.png"))
+      SimpleEntry(date: Date(), configuration: ConfigurationIntent(), image:UIImage(imageLiteralResourceName: "coffee.png"), text: "Mini travel blog")
     }
 
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-      getImage(imageName: "currentImage.JPG") { image in
-        let entry = SimpleEntry(date: Date(), configuration: configuration, image: image)
+     // getPost(imageName: "coffee.png") { image, text in
+     //   let entry = SimpleEntry(date: Date(), configuration: configuration, image: image, text: text)
+      let entry = SimpleEntry(date: Date(), configuration: ConfigurationIntent(), image:UIImage(imageLiteralResourceName: "coffee.png"), text: "Mini travel blog")
         completion(entry)
-      }
+  
     }
 
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
-      getImage(imageName: "currentImage.JPG") { image in
+      getPost(imageName: "currentImage.JPG") { image, text in
         var entries: [SimpleEntry] = []
 
         // Generate a timeline consisting of five entries an hour apart, starting from the current date.
         let currentDate = Date()
         for hourOffset in 0 ..< 5 {
             let entryDate = Calendar.current.date(byAdding: .hour, value: hourOffset, to: currentDate)!
-          let entry = SimpleEntry(date: entryDate, configuration: configuration, image: image)
+          let entry = SimpleEntry(date: entryDate, configuration: configuration, image: image, text:text)
             entries.append(entry)
         }
 
@@ -41,7 +43,7 @@ struct Provider: IntentTimelineProvider {
       }
     }
 
-  func getImage(imageName: String, completion: @escaping (UIImage) ->()) {
+  func getPost(imageName: String, completion: @escaping (UIImage, String) ->()) {
       FirebaseApp.configure()
 //    do {
 //      try Auth.auth().useUserAccessGroup("EQHXZ8M8AV.group.com.google.firebase.extensions")
@@ -52,7 +54,23 @@ struct Provider: IntentTimelineProvider {
       ref.getData(maxSize: 20 * 1024 * 2048) { (data: Data?, error: Error?) in
         guard let data = data, error == nil else {return }
           let image = UIImage(data:data)!
-          completion(image)
+        let db = Firestore.firestore()
+        db.collection("Posts").document("post")
+            .addSnapshotListener { documentSnapshot, error in
+              guard let document = documentSnapshot else {
+                print("Error fetching document: \(error!)")
+                completion(image, "")
+                return
+              }
+              guard let data = document.data() else {
+                print("Document data was empty.")
+                completion(image, "")
+                return
+              }
+              print("Current data: \(data)")
+              let description = data["description"] as? String
+              completion(image, description ?? "")
+            }
         }
     }
   
@@ -62,7 +80,7 @@ struct SimpleEntry: TimelineEntry {
     let date: Date
     let configuration: ConfigurationIntent
     var image : UIImage = UIImage()
-
+    var text:String
 }
 
 struct PhotoWidgetEntryView : View {
@@ -72,25 +90,27 @@ struct PhotoWidgetEntryView : View {
         VStack{
           switch family {
             case .systemSmall:
-              Text(entry.date, style: .time)
-                .bold()
-              ZStack {
+              VStack {
                 Image(uiImage: entry.image).resizable()
+                Text(entry.text)
+                  .bold()
+                  .padding()
               }
             case .systemMedium:
               HStack {
-                Text(entry.date, style: .time)
-                  .bold()
                 Image(uiImage: entry.image).resizable()
+                Text(entry.text)
+                  .bold()
+                  .padding()
               }
             case .systemLarge:
               VStack {
                 Text(entry.date, style: .time)
                   .bold()
+                  .padding()
                 Image(uiImage: entry.image).resizable()
-                Text("Have a good day!")
+                Text(entry.text)
                   .bold()
-                  .foregroundColor(.blue)
                   .padding()
               }
             default:
@@ -117,11 +137,11 @@ struct PhotoWidget: Widget {
 struct PhotoWidget_Previews: PreviewProvider {
     static var previews: some View {
       Group {
-        PhotoWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent(), image: UIImage(imageLiteralResourceName: "coffee.png")))
+        PhotoWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent(), image: UIImage(imageLiteralResourceName: "coffee.png"), text: "Mini travel blog"))
                   .previewContext(WidgetPreviewContext(family: .systemSmall))
-        PhotoWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent(), image: UIImage(imageLiteralResourceName: "coffee.png")))
+        PhotoWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent(), image: UIImage(imageLiteralResourceName: "coffee.png"), text:"Mini travel blog"))
                   .previewContext(WidgetPreviewContext(family: .systemMedium))
-        PhotoWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent(), image: UIImage(imageLiteralResourceName: "coffee.png")))
+        PhotoWidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent(), image: UIImage(imageLiteralResourceName: "coffee.png"), text: "Mini travel blog"))
                   .previewContext(WidgetPreviewContext(family: .systemLarge))
             }
     }

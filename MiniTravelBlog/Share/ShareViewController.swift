@@ -5,11 +5,13 @@
 //  Created by Charlotte Liang on 3/17/22.
 //
 
+import WidgetKit
 import UIKit
 import Social
 import FirebaseAuth
 import FirebaseCore
 import FirebaseStorage
+import FirebaseFirestore
 
 class ShareViewController: SLComposeServiceViewController {
   var imageData : NSData!
@@ -32,8 +34,8 @@ class ShareViewController: SLComposeServiceViewController {
           
           let fileName = "currentImage.JPG"
           let ref = Storage.storage().reference().child(fileName)
-          let item = self.extensionContext?.inputItems.first as! NSExtensionItem
-          for attachment in item.attachments! {
+          let firstItem = self.extensionContext?.inputItems.first as! NSExtensionItem
+          for attachment in firstItem.attachments! {
             guard let typeIdentifier = attachment.registeredTypeIdentifiers.first else { return }
             attachment.loadItem(forTypeIdentifier: typeIdentifier, options: nil) { (item: NSSecureCoding?, error: Error?) in
               if (item is URL) {
@@ -42,11 +44,27 @@ class ShareViewController: SLComposeServiceViewController {
               if (item is UIImage ) {
                 self.imageData = (item as! UIImage).pngData() as NSData?
               }
+                
+              
               ref.putData(self.imageData as Data, metadata: nil) { (metadata: StorageMetadata?, error: Error?) in
                 self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
               }
             }
           }
+      // Add a new document in collection "cities"
+      let db = Firestore.firestore()
+      let description = self.contentText
+      db.collection("Posts").document("post").setData([
+        "description": description ?? ""
+      ]) { err in
+          if let err = err {
+              print("Error writing document: \(err)")
+          } else {
+              print("Document successfully written!")
+          }
+        WidgetCenter.shared.reloadAllTimelines()
+
+      }
     }
 
     override func configurationItems() -> [Any]! {
