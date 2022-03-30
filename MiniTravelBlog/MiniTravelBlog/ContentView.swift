@@ -6,61 +6,61 @@
 //
 
 import SwiftUI
-import FirebaseAuth
-import FirebaseStorage
-import FirebaseFirestore
+import WidgetKit
 
 struct ContentView: View {
-  
-  @State var image:UIImage?
-  @State var description:String?
-    var body: some View {
-      VStack {
+  @State var image: UIImage?
+  @State var description: String?
+  @State var url: URL?
+  var body: some View {
+    VStack {
       if image != nil {
-        Image(uiImage:image!)
+        Image(uiImage: image!)
           .resizable()
           .scaledToFit()
       }
-        if description != nil {
-          Text(description!)
-            .padding()
+      if url != nil {
+        if #available(iOS 15.0, *) {
+          AsyncImage(
+            url: url,
+            content: { image in
+              image.resizable()
+                .aspectRatio(contentMode: .fit)
+            },
+            placeholder: {
+              ProgressView()
+            }
+          )
+        } else {
+          // Fallback on earlier versions
         }
-      }.onAppear() {
-        showPost()
+      }
+      if description != nil {
+        Text(description!)
+          .bold()
+          .padding()
       }
     }
-  
-  func showPost() {
-//    do {
-//      try Auth.auth().useUserAccessGroup("EQHXZ8M8AV.group.com.google.firebase.extensions")
-//    } catch let error as NSError {
-//      print("Error changing user access group: %@", error)
-//    }
-    let ref = Storage.storage().reference().child("currentImage.JPG")
-        ref.getData(maxSize: 20 * 1024 * 2048) { (data: Data?, error: Error?) in
-          guard let data = data, error == nil else {return }
-          self.image = UIImage(data:data)!
-          }
-    let db = Firestore.firestore()
-    db.collection("Posts").document("post")
-        .addSnapshotListener { documentSnapshot, error in
-          guard let document = documentSnapshot else {
-            print("Error fetching document: \(error!)")
-            return
-          }
-          guard let data = document.data() else {
-            print("Document data was empty.")
-            return
-          }
-          print("Current data: \(data)")
-          self.description = data["description"] as? String
-        }
+    .onAppear {
+      showPost()
+    }
+  }
 
+  func showPost() {
+    let imageFileName = "currentImage.JPG"
+//    MiniPost.getPost(imageName: imageFileName) { image, description in
+//      self.image = image
+//      self.description = description
+//    }
+    MiniPost.getPostURL(imageName: imageFileName) { url, description in
+      self.url = url
+      self.description = description
+    }
   }
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
+  static var previews: some View {
+    ContentView()
+  }
 }
