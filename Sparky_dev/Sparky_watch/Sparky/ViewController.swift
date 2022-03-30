@@ -15,24 +15,22 @@
 import UIKit
 import SwiftUI
 import Firebase
-import SwiftUI
 
 class ViewController: UIViewController {
-  
   @IBOutlet var imageView: UIImageView!
-  var storage : Storage!
-  var handle : AuthStateDidChangeListenerHandle!
-  @IBOutlet weak var imageLabel: UILabel!
-  @IBOutlet weak var authButton: UIBarButtonItem!
-  
+  var storage: Storage!
+  var handle: AuthStateDidChangeListenerHandle!
+  @IBOutlet var imageLabel: UILabel!
+  @IBOutlet var authButton: UIBarButtonItem!
+
   override func viewWillAppear(_ animated: Bool) {
     do {
       try Auth.auth().useUserAccessGroup("EQHXZ8M8AV.group.com.google.firebase.extensions")
     } catch let error as NSError {
       print("Error changing user access group: %@", error)
     }
-    handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-      if (user == nil) {
+    handle = Auth.auth().addStateDidChangeListener { auth, user in
+      if user == nil {
         self.authButton.title = "Log in 🔐"
       } else {
         self.authButton.title = "Log in 🔐"
@@ -40,97 +38,100 @@ class ViewController: UIViewController {
       self.view.setNeedsLayout()
     }
   }
-  
+
   override func viewWillDisappear(_ animated: Bool) {
     Auth.auth().removeStateDidChangeListener(handle!)
   }
-  
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.refreshView()
-
+    refreshView()
   }
-  
-// Storage
-  func loadImage () {
-    self.storage = Storage.storage()
+
+  // Storage
+  func loadImage() {
+    storage = Storage.storage()
     let imageFileName = "imageFileName.JPG"
-    let ref = self.storage.reference().child(imageFileName)
+    let ref = storage.reference().child(imageFileName)
     ref.getData(maxSize: 20 * 1024 * 2014) { (data: Data?, error: Error?) in
       guard let data = data, error == nil else { return }
       self.imageView.contentMode = .scaleAspectFit
-      self.imageView.image = UIImage(data:data)
+      self.imageView.image = UIImage(data: data)
     }
   }
-  
+
   @IBAction func refreshButtonClicked(_ sender: Any) {
-    self.refreshView()
+    refreshView()
   }
+
   // Auth
   @IBAction func authButtonClicked(_ sender: Any) {
-    if (Auth.auth().currentUser == nil) {
-      self.popUpAuthDialog()
+    if Auth.auth().currentUser == nil {
+      popUpAuthDialog()
     } else {
       try! Auth.auth().signOut()
-
     }
   }
-  
+
   func popUpAuthDialog() {
-    let alert = UIAlertController(title: "Sign up", message: "You have not sign in yet", preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: NSLocalizedString("Register", comment: "Reigster your account"), style: .default, handler: { _ in
-      self.signup()
-    }))
-    alert.addAction(UIAlertAction(title: NSLocalizedString("Sign in", comment: "Sign in"), style: .default, handler: { _ in
-      self.signin()
-    }))
-    alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Cancel"), style: .cancel, handler: { _ in
-    }))
-    self.present(alert, animated: true, completion: nil)
-
-  }
-  
-  func signup() {
-    let alert = UIAlertController(title: "Sign up", message: "Create an account with your email and a password.", preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Default action"), style: .cancel, handler: { _ in
-    }))
-    alert.addAction(UIAlertAction(title: NSLocalizedString("Confirm", comment: ""), style: .default, handler: { _ in
-      let email = alert.textFields?.first?.text
-      let password = alert.textFields?.last?.text
-      Auth.auth().createUser(withEmail: email!, password: password!, completion: { (result: AuthDataResult?, error: Error?) in
-        if (error != nil) {
-          self.scheduleLocalNotification(withError: error!)
-          return
-        }
-        self.refreshView()
-      })
-      
-    }))
-    alert.addTextField { (textField: UITextField) in
-      textField.placeholder = "Enter your email:"
-    }
-    alert.addTextField { (textField: UITextField) in
-      textField.placeholder = "Enter your password:"
-      textField.isSecureTextEntry = true
-    }
-    self.present(alert, animated: true, completion: nil)
-  }
-  
-  func signin() {
-    let alert = UIAlertController(title: "Sign in", message: "Sign in with your email and a password.", preferredStyle: .alert)
-    alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: "Default action"), style: .cancel, handler: { _ in
-    }))
-    alert.addAction(UIAlertAction(title: NSLocalizedString("Confirm", comment: ""), style: .default, handler: { _ in
-      let email = alert.textFields?.first?.text
-      let password = alert.textFields?.last?.text
-      Auth.auth().signIn(withEmail: email!, password: password!) { (result: AuthDataResult?, error: Error?) in
-        if (error != nil) {
-          self.scheduleLocalNotification(withError: error!)
-          return
-        }
-        self.refreshView()
+    let alert = UIAlertController(
+      title: "Sign up",
+      message: "You have not sign in yet",
+      preferredStyle: .alert
+    )
+    alert.addAction(UIAlertAction(
+      title: NSLocalizedString("Register", comment: "Reigster your account"),
+      style: .default,
+      handler: { _ in
+        self.signup()
       }
-    }))
+    ))
+    alert.addAction(UIAlertAction(
+      title: NSLocalizedString("Sign in", comment: "Sign in"),
+      style: .default,
+      handler: { _ in
+        self.signin()
+      }
+    ))
+    alert.addAction(UIAlertAction(
+      title: NSLocalizedString("Cancel", comment: "Cancel"),
+      style: .cancel,
+      handler: { _ in
+      }
+    ))
+    present(alert, animated: true, completion: nil)
+  }
+
+  func signup() {
+    let alert = UIAlertController(
+      title: "Sign up",
+      message: "Create an account with your email and a password.",
+      preferredStyle: .alert
+    )
+    alert.addAction(UIAlertAction(
+      title: NSLocalizedString("Cancel", comment: "Default action"),
+      style: .cancel,
+      handler: { _ in
+      }
+    ))
+    alert
+      .addAction(UIAlertAction(title: NSLocalizedString("Confirm", comment: ""), style: .default,
+                               handler: { _ in
+                                 let email = alert.textFields?.first?.text
+                                 let password = alert.textFields?.last?.text
+                                 Auth.auth().createUser(
+                                   withEmail: email!,
+                                   password: password!,
+                                   completion: { (result: AuthDataResult?, error: Error?) in
+                                     if error != nil {
+                                       self.scheduleLocalNotification(withError: error!)
+                                       return
+                                     }
+                                     self.refreshView()
+                                   }
+                                 )
+
+                               }))
     alert.addTextField { (textField: UITextField) in
       textField.placeholder = "Enter your email:"
     }
@@ -138,35 +139,74 @@ class ViewController: UIViewController {
       textField.placeholder = "Enter your password:"
       textField.isSecureTextEntry = true
     }
-    self.present(alert, animated: true, completion: nil)
-  
+    present(alert, animated: true, completion: nil)
   }
-  
+
+  func signin() {
+    let alert = UIAlertController(
+      title: "Sign in",
+      message: "Sign in with your email and a password.",
+      preferredStyle: .alert
+    )
+    alert.addAction(UIAlertAction(
+      title: NSLocalizedString("Cancel", comment: "Default action"),
+      style: .cancel,
+      handler: { _ in
+      }
+    ))
+    alert
+      .addAction(UIAlertAction(title: NSLocalizedString("Confirm", comment: ""), style: .default,
+                               handler: { _ in
+                                 let email = alert.textFields?.first?.text
+                                 let password = alert.textFields?.last?.text
+                                 Auth.auth()
+                                   .signIn(withEmail: email!,
+                                           password: password!) { (
+                                     result: AuthDataResult?,
+                                     error: Error?
+                                   ) in
+                                     if error != nil {
+                                       self.scheduleLocalNotification(withError: error!)
+                                       return
+                                     }
+                                     self.refreshView()
+                                   }
+                               }))
+    alert.addTextField { (textField: UITextField) in
+      textField.placeholder = "Enter your email:"
+    }
+    alert.addTextField { (textField: UITextField) in
+      textField.placeholder = "Enter your password:"
+      textField.isSecureTextEntry = true
+    }
+    present(alert, animated: true, completion: nil)
+  }
+
   func refreshView() {
-    if (Auth.auth().currentUser == nil) {
-      self.authButton.title = "Log in 🔐"
+    if Auth.auth().currentUser == nil {
+      authButton.title = "Log in 🔐"
     } else {
-      self.authButton.title = "Log out 🔐"
+      authButton.title = "Log out 🔐"
     }
     loadImage()
   }
-  
+
   func scheduleLocalNotification(withError error: Error) {
     print(error)
     let content = UNMutableNotificationContent()
-    content.title = "title"//NSString.localizedUserNotificationString(forKey: "Error!", arguments: nil)
-    content.body = "body"//NSString.localizedUserNotificationString(forKey: error.localizedDescription, arguments: nil)
+    content
+      .title = "title" // NSString.localizedUserNotificationString(forKey: "Error!", arguments: nil)
+    content
+      .body =
+      "body" // NSString.localizedUserNotificationString(forKey: error.localizedDescription, arguments: nil)
     content.sound = .default
-     
+
     let request = UNNotificationRequest(identifier: "Now", content: content, trigger: nil)
     let center = UNUserNotificationCenter.current()
-    center.add(request) { (theError : Error?) in
-      if (theError != nil) {
+    center.add(request) { (theError: Error?) in
+      if theError != nil {
         print(theError!.localizedDescription)
       }
     }
   }
-  
-
 }
-

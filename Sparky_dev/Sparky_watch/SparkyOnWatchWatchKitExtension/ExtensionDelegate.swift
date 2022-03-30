@@ -19,8 +19,5 @@ import FirebaseMessaging
 
 /// Entry point of the watch app.
 class ExtensionDelegate: NSObject, WKExtensionDelegate, MessagingDelegate {
-  func applicationDidFinishLaunching() {
-
-  }
-
+  func applicationDidFinishLaunching() {}
 }
