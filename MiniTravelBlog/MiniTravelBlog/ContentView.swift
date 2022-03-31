@@ -9,18 +9,11 @@ import SwiftUI
 import WidgetKit
 
 struct ContentView: View {
-  @State var image: UIImage?
   @State var description: String?
   @State var url: URL?
   var body: some View {
     VStack {
-      if image != nil {
-        Image(uiImage: image!)
-          .resizable()
-          .scaledToFit()
-      }
       if url != nil {
-        if #available(iOS 15.0, *) {
           AsyncImage(
             url: url,
             content: { image in
@@ -31,9 +24,6 @@ struct ContentView: View {
               ProgressView()
             }
           )
-        } else {
-          // Fallback on earlier versions
-        }
       }
       if description != nil {
         Text(description!)
@@ -47,14 +37,10 @@ struct ContentView: View {
   }
 
   func showPost() {
-    let imageFileName = "currentImage.JPG"
-//    MiniPost.getPost(imageName: imageFileName) { image, description in
-//      self.image = image
-//      self.description = description
-//    }
-    MiniPost.getPostURL(imageName: imageFileName) { url, description in
-      self.url = url
-      self.description = description
+    Task {
+      let post = try await MiniPost.getPostURL()
+      self.url = URL(string:post.url)
+      self.description = post.description
     }
   }
 }

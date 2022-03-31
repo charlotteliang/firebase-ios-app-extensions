@@ -10,40 +10,31 @@ import FirebaseAuth
 import FirebaseCore
 import FirebaseStorage
 import FirebaseFirestore
+import FirebaseFirestoreSwift
+
+struct Post: Codable {
+  @DocumentID var id: String?
+  var description: String
+  var url: String
+}
 
 struct MiniPost {
-  static func getPostURL(imageName: String, completion: @escaping (URL, String) -> Void) {
+  static func getPostURL() async throws -> Post {
     if FirebaseApp.app() == nil {
       FirebaseApp.configure()
     }
-
-    let ref = Storage.storage().reference().child(imageName)
-    ref.downloadURL { url, error in
-      if let error = error {
-        print("Error fetching URL: \(error)")
-        completion(url!, "")
-        return
-      } else {
-        let db = Firestore.firestore()
-        db.collection("Posts").document("post")
-          .getDocument { document, error in
-            if let document = document, document.exists {
-              guard let data = document.data() else {
-                print("Document data was empty.")
-                completion(url!, "")
-                return
-              }
-              print("Current data: \(data)")
-              let description = data["description"] as? String
-              completion(url!, description ?? "")
-            } else {
-              print("Document does not exist")
-              completion(url!, "test")
-            }
-          }
-      }
+    let db = Firestore.firestore()
+    let docRef = db.collection("Posts").document("post")
+    do  {
+      let document = try await docRef.getDocument()
+      let post = try document.data(as: Post.self)
+      return post
+    } catch {
+      print(error.localizedDescription)
+      // TODO: Handle error
     }
-    
+    // ...
+    return Post(id: "0", description: "currentImageName.JPG", url: "")
   }
 
   static func getPost(imageName: String, completion: @escaping (UIImage, String) -> Void) {

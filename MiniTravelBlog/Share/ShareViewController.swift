@@ -51,8 +51,8 @@ class ShareViewController: SLComposeServiceViewController {
     // Add a new document in collection "Posts"
     let db = Firestore.firestore()
     let description = contentText
-    db.collection("Posts").document("post").setData([
-      "description": description ?? "",
+    db.collection("Posts").document("post").updateData([
+      "description": description ?? ""
     ]) { err in
       if let err = err {
         print("Error writing document: \(err)")
