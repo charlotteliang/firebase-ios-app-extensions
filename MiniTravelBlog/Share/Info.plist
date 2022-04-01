@@ -9,7 +9,7 @@
 			<key>NSExtensionActivationRule</key>
 			<dict>
 				<key>NSExtensionActivationSupportsImageWithMaxCount</key>
-				<integer>5</integer>
+				<integer>20</integer>
 				<key>NSExtensionActivationSupportsText</key>
 				<true/>
 			</dict>

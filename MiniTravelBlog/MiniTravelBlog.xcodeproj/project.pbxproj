@@ -21,6 +21,11 @@
 		514BB82927E3DA290099C3F3 /* PhotoWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 514BB82427E3DA280099C3F3 /* PhotoWidget.intentdefinition */; };
 		514BB82C27E3DA290099C3F3 /* PhotoWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 514BB81E27E3DA280099C3F3 /* PhotoWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		514BB83427E3DA9C0099C3F3 /* coffee.png in Resources */ = {isa = PBXBuildFile; fileRef = 514BB83227E3DA9C0099C3F3 /* coffee.png */; };
+		518EA16427F6441600E20E9E /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 518EA16327F6441600E20E9E /* FirebaseStorageSwift-Beta */; };
+		518EA16627F646B600E20E9E /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 518EA16527F646B600E20E9E /* FirebaseFirestoreSwift-Beta */; };
+		518EA16827F64A6400E20E9E /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 518EA16727F64A6400E20E9E /* FirebaseFirestoreSwift-Beta */; };
+		518EA17227F785CC00E20E9E /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EA17127F785CC00E20E9E /* PostViewModel.swift */; };
+		518EA17327F785CC00E20E9E /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518EA17127F785CC00E20E9E /* PostViewModel.swift */; };
 		51B2CF1027EA7B5400099939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 514BB7E627E3C67E0099C3F3 /* Assets.xcassets */; };
 		51B2CF1127EA7B5500099939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 514BB7E627E3C67E0099C3F3 /* Assets.xcassets */; };
 		51B2CF1527EA7CA000099939 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 51B2CF1427EA7CA000099939 /* FirebaseAuth */; };
@@ -32,6 +37,8 @@
 		51B2CF2127EA7CFC00099939 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 51B2CF2027EA7CFC00099939 /* FirebaseAuth */; };
 		51B2CF2327EA7D0100099939 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 51B2CF2227EA7D0100099939 /* FirebaseFirestore */; };
 		51B2CF2527EA7D0600099939 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 51B2CF2427EA7D0600099939 /* FirebaseStorage */; };
+		51B2CF2D27EC105700099939 /* MiniPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B2CF2C27EC105700099939 /* MiniPost.swift */; };
+		51B2CF2E27EC105700099939 /* MiniPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B2CF2C27EC105700099939 /* MiniPost.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,7 +93,9 @@
 		514BB82727E3DA290099C3F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		514BB83227E3DA9C0099C3F3 /* coffee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee.png; sourceTree = "<group>"; };
 		5171886F27E579250024AC40 /* Share.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Share.entitlements; sourceTree = "<group>"; };
+		518EA17127F785CC00E20E9E /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		51B2CF2627EA7DE700099939 /* PhotoWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PhotoWidgetExtension.entitlements; sourceTree = SOURCE_ROOT; };
+		51B2CF2C27EC105700099939 /* MiniPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniPost.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +114,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				51B2CF1527EA7CA000099939 /* FirebaseAuth in Frameworks */,
+				518EA16427F6441600E20E9E /* FirebaseStorageSwift-Beta in Frameworks */,
+				518EA16627F646B600E20E9E /* FirebaseFirestoreSwift-Beta in Frameworks */,
 				51B2CF1727EA7CA000099939 /* FirebaseFirestore in Frameworks */,
 				51B2CF1927EA7CA000099939 /* FirebaseStorage in Frameworks */,
 			);
@@ -117,6 +128,7 @@
 				514BB82027E3DA280099C3F3 /* SwiftUI.framework in Frameworks */,
 				51B2CF2327EA7D0100099939 /* FirebaseFirestore in Frameworks */,
 				51B2CF2127EA7CFC00099939 /* FirebaseAuth in Frameworks */,
+				518EA16827F64A6400E20E9E /* FirebaseFirestoreSwift-Beta in Frameworks */,
 				51B2CF2527EA7D0600099939 /* FirebaseStorage in Frameworks */,
 				514BB81F27E3DA280099C3F3 /* WidgetKit.framework in Frameworks */,
 			);
@@ -164,6 +176,8 @@
 				513CD0BC27E40C2C005913F9 /* MiniTravelBlog.entitlements */,
 				514BB7E227E3C67C0099C3F3 /* MiniTravelBlogApp.swift */,
 				514BB7E427E3C67C0099C3F3 /* ContentView.swift */,
+				51B2CF2C27EC105700099939 /* MiniPost.swift */,
+				518EA17127F785CC00E20E9E /* PostViewModel.swift */,
 				514BB7E627E3C67E0099C3F3 /* Assets.xcassets */,
 				514BB7E827E3C67E0099C3F3 /* Preview Content */,
 			);
@@ -244,6 +258,8 @@
 				51B2CF1427EA7CA000099939 /* FirebaseAuth */,
 				51B2CF1627EA7CA000099939 /* FirebaseFirestore */,
 				51B2CF1827EA7CA000099939 /* FirebaseStorage */,
+				518EA16327F6441600E20E9E /* FirebaseStorageSwift-Beta */,
+				518EA16527F646B600E20E9E /* FirebaseFirestoreSwift-Beta */,
 			);
 			productName = MiniTravelBlog;
 			productReference = 514BB7DF27E3C67C0099C3F3 /* MiniTravelBlog.app */;
@@ -266,6 +282,7 @@
 				51B2CF2027EA7CFC00099939 /* FirebaseAuth */,
 				51B2CF2227EA7D0100099939 /* FirebaseFirestore */,
 				51B2CF2427EA7D0600099939 /* FirebaseStorage */,
+				518EA16727F64A6400E20E9E /* FirebaseFirestoreSwift-Beta */,
 			);
 			productName = PhotoWidgetExtension;
 			productReference = 514BB81E27E3DA280099C3F3 /* PhotoWidgetExtension.appex */;
@@ -358,6 +375,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				518EA17227F785CC00E20E9E /* PostViewModel.swift in Sources */,
+				51B2CF2D27EC105700099939 /* MiniPost.swift in Sources */,
 				514BB82927E3DA290099C3F3 /* PhotoWidget.intentdefinition in Sources */,
 				514BB7E527E3C67C0099C3F3 /* ContentView.swift in Sources */,
 				514BB7E327E3C67C0099C3F3 /* MiniTravelBlogApp.swift in Sources */,
@@ -368,6 +387,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				518EA17327F785CC00E20E9E /* PostViewModel.swift in Sources */,
+				51B2CF2E27EC105700099939 /* MiniPost.swift in Sources */,
 				514BB82327E3DA280099C3F3 /* PhotoWidget.swift in Sources */,
 				514BB82827E3DA290099C3F3 /* PhotoWidget.intentdefinition in Sources */,
 			);
@@ -591,7 +612,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -625,7 +646,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -753,6 +774,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		518EA16327F6441600E20E9E /* FirebaseStorageSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 51B2CF1327EA7CA000099939 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageSwift-Beta";
+		};
+		518EA16527F646B600E20E9E /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 51B2CF1327EA7CA000099939 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
+		};
+		518EA16727F64A6400E20E9E /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 51B2CF1327EA7CA000099939 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
+		};
 		51B2CF1427EA7CA000099939 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 51B2CF1327EA7CA000099939 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
