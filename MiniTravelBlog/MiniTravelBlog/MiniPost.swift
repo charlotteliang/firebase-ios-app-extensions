@@ -11,11 +11,6 @@ import FirebaseStorage
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-struct Post: Codable {
-  @DocumentID var id: String?
-  var description: String
-  var url: String
-}
 
 struct MiniPost {
   static func getPostURL() async throws -> Post {

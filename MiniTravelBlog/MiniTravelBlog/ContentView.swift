@@ -9,33 +9,25 @@ import SwiftUI
 import WidgetKit
 
 struct ContentView: View {
-  @State var description: String?
-  @State var url: URL?
+  @ObservedObject var postViewModel: PostViewModel
   var body: some View {
     VStack {
-      if url != nil {
-          AsyncImage(
-            url: url,
-            content: { image in
+      AsyncImage(
+        url: URL(string:postViewModel.post.url),
+        content: { image in
               image.resizable()
                 .aspectRatio(contentMode: .fit)
             },
-            placeholder: {
-              ProgressView()
-            }
-          )
-      }
-      if description != nil {
-        Text(description!)
-          .bold()
-          .padding()
-      }
+        placeholder: {
+          ProgressView()
+        }
+      )
+      TextField("Post description", text: $postViewModel.post.description)
     }
     .task {
       do {
         let post = try await MiniPost.getPostURL()
-        self.url = URL(string:post.url)
-        self.description = post.description
+        postViewModel.post = post
       } catch {
         
       }
@@ -45,6 +37,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
-    ContentView()
+    ContentView(postViewModel: PostViewModel(description: "",url: ""))
   }
 }
