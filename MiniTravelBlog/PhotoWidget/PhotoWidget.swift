@@ -8,6 +8,7 @@
 import WidgetKit
 import SwiftUI
 import Intents
+import FirebaseCore
 
 struct Provider: IntentTimelineProvider {
   func placeholder(in context: Context) -> SimpleEntry {
@@ -32,6 +33,10 @@ struct Provider: IntentTimelineProvider {
 
   func getTimeline(for configuration: ConfigurationIntent, in context: Context,
                    completion: @escaping (Timeline<Entry>) -> Void) {
+    if FirebaseApp.app() == nil {
+      FirebaseApp.configure()
+    }
+
     MiniPost.getPost(imageName: "currentImage.JPG") { image, text in
       var entries: [SimpleEntry] = []
 

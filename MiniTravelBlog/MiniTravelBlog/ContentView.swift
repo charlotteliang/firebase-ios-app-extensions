@@ -31,16 +31,14 @@ struct ContentView: View {
           .padding()
       }
     }
-    .onAppear {
-      showPost()
-    }
-  }
-
-  func showPost() {
-    Task {
-      let post = try await MiniPost.getPostURL()
-      self.url = URL(string:post.url)
-      self.description = post.description
+    .task {
+      do {
+        let post = try await MiniPost.getPostURL()
+        self.url = URL(string:post.url)
+        self.description = post.description
+      } catch {
+        
+      }
     }
   }
 }

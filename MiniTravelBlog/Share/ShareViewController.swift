@@ -51,13 +51,14 @@ class ShareViewController: SLComposeServiceViewController {
     // Add a new document in collection "Posts"
     let db = Firestore.firestore()
     let description = contentText
-    db.collection("Posts").document("post").updateData([
+    
+    Task {
+      do {
+       try await db.collection("Posts").document("post").updateData([
       "description": description ?? ""
-    ]) { err in
-      if let err = err {
-        print("Error writing document: \(err)")
-      } else {
-        print("Document successfully written!")
+    ])
+      } catch {
+        // TODO: handle error
       }
       WidgetCenter.shared.reloadAllTimelines()
     }
