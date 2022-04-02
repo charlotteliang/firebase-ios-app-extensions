@@ -9,6 +9,7 @@ import SwiftUI
 import WidgetKit
 
 struct ContentView: View {
+  @Environment(\.scenePhase) var scenePhase
   @StateObject var postViewModel = PostViewModel()
   
   var body: some View {
@@ -32,6 +33,13 @@ struct ContentView: View {
     }
     .task {
       await postViewModel.fetchImage()
+    }
+    .onChange(of: scenePhase) { newScenePhase in
+      if newScenePhase == .active {
+        Task {
+          await postViewModel.fetchImage()
+        }
+      }
     }
   }
 }

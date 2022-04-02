@@ -52,6 +52,7 @@ class ShareViewController: SLComposeServiceViewController {
       let _ = try await ref.putDataAsync(self.imageData as Data)
       let url = try await ref.downloadURL()
       
+      // write post data to Firestore
       let post = Post(description: description ?? "", url: url.absoluteString)
       try db.collection("Posts").document("post").setData(from: post)
       

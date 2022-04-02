@@ -37,7 +37,9 @@ struct Provider: IntentTimelineProvider {
       FirebaseApp.configure()
     }
     
-    MiniPost.getPost(imageName: "currentImage.JPG") { image, text in
+    Task {
+      let (image, text) = try await MiniPost.getPost(imageName: "currentImage.JPG")
+      
       var entries: [SimpleEntry] = []
       
       // Generate a timeline consisting of five entries an hour apart, starting from the current date.

@@ -48,6 +48,7 @@
 		8880A2FD27F889420024E3B3 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884D749327F8715700FEC040 /* Post.swift */; };
 		8880A2FF27F88BC50024E3B3 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 8880A2FE27F88BC50024E3B3 /* FirebaseFirestoreSwift-Beta */; };
 		8880A30127F88C130024E3B3 /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 8880A30027F88C130024E3B3 /* FirebaseStorageSwift-Beta */; };
+		888D334827F898920033A848 /* FirebaseStorageSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 888D334727F898920033A848 /* FirebaseStorageSwift-Beta */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -144,6 +145,7 @@
 				51B2CF2127EA7CFC00099939 /* FirebaseAuth in Frameworks */,
 				518EA16827F64A6400E20E9E /* FirebaseFirestoreSwift-Beta in Frameworks */,
 				51B2CF2527EA7D0600099939 /* FirebaseStorage in Frameworks */,
+				888D334827F898920033A848 /* FirebaseStorageSwift-Beta in Frameworks */,
 				514BB81F27E3DA280099C3F3 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +344,7 @@
 				51B2CF2227EA7D0100099939 /* FirebaseFirestore */,
 				51B2CF2427EA7D0600099939 /* FirebaseStorage */,
 				518EA16727F64A6400E20E9E /* FirebaseFirestoreSwift-Beta */,
+				888D334727F898920033A848 /* FirebaseStorageSwift-Beta */,
 			);
 			productName = PhotoWidgetExtension;
 			productReference = 514BB81E27E3DA280099C3F3 /* PhotoWidgetExtension.appex */;
@@ -906,6 +909,11 @@
 			productName = "FirebaseFirestoreSwift-Beta";
 		};
 		8880A30027F88C130024E3B3 /* FirebaseStorageSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 51B2CF1327EA7CA000099939 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageSwift-Beta";
+		};
+		888D334727F898920033A848 /* FirebaseStorageSwift-Beta */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 51B2CF1327EA7CA000099939 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageSwift-Beta";
