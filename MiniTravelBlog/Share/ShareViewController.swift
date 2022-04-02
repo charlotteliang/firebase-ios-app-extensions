@@ -11,7 +11,9 @@ import Social
 import FirebaseAuth
 import FirebaseCore
 import FirebaseStorage
+import FirebaseStorageSwift
 import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class ShareViewController: SLComposeServiceViewController {
   var imageData: NSData!
@@ -28,39 +30,33 @@ class ShareViewController: SLComposeServiceViewController {
     }
     let fileName = "currentImage.JPG"
     let ref = Storage.storage().reference().child(fileName)
-    let firstItem = extensionContext?.inputItems.first as! NSExtensionItem
-    for attachment in firstItem.attachments! {
-      guard let typeIdentifier = attachment.registeredTypeIdentifiers.first else { return }
-      attachment
-        .loadItem(forTypeIdentifier: typeIdentifier,
-                  options: nil) { (item: NSSecureCoding?, error: Error?) in
-          if item is URL {
-            self.imageData = NSData(contentsOf: item as! URL)
-          }
-          if item is UIImage {
-            self.imageData = (item as! UIImage).pngData() as NSData?
-          }
-
-          ref
-            .putData(self.imageData as Data,
-                     metadata: nil) { (metadata: StorageMetadata?, error: Error?) in
-              self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
-            }
-        }
-    }
-    // Add a new document in collection "Posts"
+    
     let db = Firestore.firestore()
     let description = contentText
     
+    guard let inputItem = extensionContext?.inputItems.first as? NSExtensionItem else { return }
+    guard let attachment = inputItem.attachments?.first else { return }
+    guard let typeIdentifier = attachment.registeredTypeIdentifiers.first else { return }
+    
     Task {
-      do {
-       try await db.collection("Posts").document("post").updateData([
-      "description": description ?? ""
-    ])
-      } catch {
-        // TODO: handle error
+      // load image data
+      let item = try await attachment.loadItem(forTypeIdentifier: typeIdentifier)
+      if let itemURL = item as? URL {
+        self.imageData = NSData(contentsOf: itemURL)
       }
+      else if let itemImage = item as? UIImage {
+        self.imageData = itemImage.pngData() as? NSData
+      }
+      
+      // write image data to Cloud Storage
+      let _ = try await ref.putDataAsync(self.imageData as Data)
+      let url = try await ref.downloadURL()
+      
+      let post = Post(description: description ?? "", url: url.absoluteString)
+      try db.collection("Posts").document("post").setData(from: post)
+      
       WidgetCenter.shared.reloadAllTimelines()
+      extensionContext?.completeRequest(returningItems: [])
     }
   }
 
